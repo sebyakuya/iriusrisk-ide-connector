@@ -1,0 +1,27 @@
+<idea-plugin>
+    <id>com.iriusrisk.intellij.connector</id>
+    <name>IriusRisk IDE Connector</name>
+    <vendor email="" url="https://iriusrisk.com">IriusRisk</vendor>
+
+    <description><![CDATA[
+    Update a threat model in IriusRisk based on actual code functionality
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable parentId="tools" instance="com.iriusrisk.ide.connector.settings.AppSettingsConfigurable"
+                                 id="com.iriusrisk.ide.intellij.connector.AppSettingsConfigurable"
+                                 displayName="IriusRisk IDE Connector"/>
+        <applicationService serviceImplementation="com.iriusrisk.ide.connector.settings.AppSettingsState"/>
+    </extensions>
+
+    <actions>
+        <action id="com.iriusrisk.ide.connector.actions.IriusRiskAction"
+                class="com.iriusrisk.ide.connector.actions.IriusRiskAction" text="IriusRisk"
+                icon="/images/favicon.png"
+                description="A menu to create a mapping between classes and IriusRisk functional components">
+            <add-to-group group-id="ToolbarRunGroup" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>

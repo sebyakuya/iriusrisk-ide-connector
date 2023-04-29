@@ -1,0 +1,2 @@
+rootProject.name = 'iriusrisk-ide-connector'
+include 'java'
